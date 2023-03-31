@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const arr6 = ['b', 'b', 'e', 'e', 'e', 'c'];
+        const arr7 = ['b', 'c', 'e', 'b', 'e'];
+        const arr8 = ['b', 'e', 'c', 'e', 'c'];
+
+        function inter(a, b, c) {
+            const filtered = a.filter(value => b.includes(value));
+            for (let i = 1; i < filtered.length; ++i) {
+                if (filtered[i - 1] === filtered[i]) {
+                    filtered.splice(i, 1);
+                };
+            };
+            const filtered2 = filtered.filter(value => c.includes(value));
+            for (let i = 1; i < filtered2.length; ++i) {
+                if (filtered2[i - 1] === filtered2[i]) {
+                    filtered2.splice(i, 1);
+                };
+            };
+            return filtered2
+        }
+        console.log(inter(arr6, arr7, arr8));
+    </script>
+</body>
+
+</html>
